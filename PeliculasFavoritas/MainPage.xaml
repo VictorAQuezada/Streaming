@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:Xamd.ImageCarousel.Forms.Plugin.Abstractions;assembly=Xamd.ImageCarousel.Forms.Plugin.Abstractions"
+             x:Class="PeliculasFavoritas.MainPage"
+             NavigationPage.HasNavigationBar="False">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        
+        <!-- Header -->
+        <Grid Grid.Row="0" BackgroundColor="#3498db">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            
+            <Image Grid.Column="0" Source="logo.png" HeightRequest="60" WidthRequest="60" Margin="10"/>
+            
+            <Label Grid.Column="1"
+                   Text="Victor A. Quezada 23-EIST-8-001"
+                   TextColor="White"
+                   FontSize="18"
+                   FontAttributes="Bold"
+                   VerticalOptions="Center"
+                   HorizontalOptions="Start"
+                   Margin="10,0,0,0"/>
+        </Grid>
+        
+        <!-- Content Area - Carousel or WebView -->
+        <Grid Grid.Row="1" x:Name="contentGrid">
+            <!-- Image Carousel - Full Screen -->
+            <controls:ImageCarousel x:Name="imgSlider" 
+                                   HorizontalOptions="FillAndExpand"
+                                   VerticalOptions="FillAndExpand"
+                                   IsVisible="True"/>
+            
+            <!-- WebView for streaming - Initially hidden -->
+            <WebView x:Name="streamingWebView" 
+                     HorizontalOptions="FillAndExpand"
+                     VerticalOptions="FillAndExpand"
+                     IsVisible="False"/>
+        </Grid>
+        
+        <!-- Navigation Buttons - Bottom Bar Style -->
+        <Grid Grid.Row="2" BackgroundColor="#2c3e50" Padding="10">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            
+            <!-- Home Button -->
+            <Frame Grid.Column="0" 
+                   BackgroundColor="#3498db" 
+                   CornerRadius="30" 
+                   Padding="0" 
+                   HasShadow="True"
+                   HeightRequest="60"
+                   WidthRequest="60"
+                   HorizontalOptions="Center">
+                <ImageButton Source="HOME.png"
+                             BackgroundColor="Transparent"
+                             Aspect="AspectFill"
+                             x:Name="btn_home"
+                             Clicked="btn_home_Clicked"/>
+            </Frame>
+            
+            <!-- Netflix -->
+            <Frame Grid.Column="1" 
+                   BackgroundColor="#e74c3c" 
+                   CornerRadius="30" 
+                   Padding="0" 
+                   HasShadow="True"
+                   HeightRequest="60"
+                   WidthRequest="60"
+                   HorizontalOptions="Center">
+                <ImageButton Source="netflix.png"
+                             BackgroundColor="Transparent"
+                             Aspect="AspectFill"
+                             x:Name="btn_netflix"
+                             Clicked="btn_netflix_Clicked"/>
+            </Frame>
+            
+            <!-- Apple TV -->
+            <Frame Grid.Column="2" 
+                   BackgroundColor="#9b59b6" 
+                   CornerRadius="30" 
+                   Padding="0" 
+                   HasShadow="True"
+                   HeightRequest="60"
+                   WidthRequest="60"
+                   HorizontalOptions="Center">
+                <ImageButton Source="apple_tv.png"
+                             BackgroundColor="Transparent"
+                             Aspect="AspectFill"
+                             x:Name="btn_apple_tv"
+                             Clicked="btn_apple_tv_Clicked"/>
+            </Frame>
+            
+            <!-- Amazon Prime -->
+            <Frame Grid.Column="3" 
+                   BackgroundColor="#f39c12" 
+                   CornerRadius="30" 
+                   Padding="0" 
+                   HasShadow="True"
+                   HeightRequest="60"
+                   WidthRequest="60"
+                   HorizontalOptions="Center">
+                <ImageButton Source="amazon.png"
+                             BackgroundColor="Transparent"
+                             Aspect="AspectFill"
+                             x:Name="btn_amazon"
+                             Clicked="btn_amazon_Clicked"/>
+            </Frame>
+            
+            <!-- Disney+ -->
+            <Frame Grid.Column="4" 
+                   BackgroundColor="#2980b9" 
+                   CornerRadius="30" 
+                   Padding="0" 
+                   HasShadow="True"
+                   HeightRequest="60"
+                   WidthRequest="60"
+                   HorizontalOptions="Center">
+                <ImageButton Source="disney.png"
+                             BackgroundColor="Transparent"
+                             Aspect="AspectFill"
+                             x:Name="btn_Disney"
+                             Clicked="btn_Disney_Clicked"/>
+            </Frame>
+            
+            <!-- HBO -->
+            <Frame Grid.Column="5" 
+                   BackgroundColor="#27ae60" 
+                   CornerRadius="30" 
+                   Padding="0" 
+                   HasShadow="True"
+                   HeightRequest="60"
+                   WidthRequest="60"
+                   HorizontalOptions="Center">
+                <ImageButton Source="hbo.png"
+                             BackgroundColor="Transparent"
+                             Aspect="AspectFill"
+                             x:Name="btn_HBO"
+                             Clicked="btn_HBO_Clicked"/>
+            </Frame>
+        </Grid>
+    </Grid>
+</ContentPage>
